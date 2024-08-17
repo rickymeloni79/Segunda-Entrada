@@ -1,29 +1,44 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Entrenamiento en Línea</title>
     <script defer src="main.js"></script>
 </head>
+
 <body>
     <div>
         <h1>Bienvenido a Entrenamiento en Línea</h1>
 
+        <!-- Sección para capturar datos del usuario -->
         <div id="formSection">
-            <div>
-                <h3>Completa tus datos</h3>
-                <input type="text" id="name">
-            </div>
-            <div>
-                <input type="email" id="email">
-            </div>
+            <h3>Completa tus datos</h3>
+            <label for="name">Nombre:</label>
+            <input type="text" id="name">
+            <br>
+
+            <label for="age">Edad:</label>
+            <input type="number" id="age">
+            <br>
+
+            <label for="goal">Objetivo:</label>
+            <select id="goal">
+                <option value="ganar_masa">Ganar Masa Muscular</option>
+                <option value="perder_grasa">Perder Grasa</option>
+                <option value="mantenerse">Mantenerse</option>
+            </select>
+            <br>
+
             <button id="submitBtn">Enviar</button>
         </div>
 
-        <div id="exerciseSection">
+        <!-- Sección de selección de ejercicios (oculta por defecto) -->
+        <div id="exerciseSection" style="display:none;">
+            <h3>Selecciona tus ejercicios</h3>
             <div class="input-group">
-                <h3>Selecciona un grupo muscular</h3>
+                <label for="muscleGroup">Grupo Muscular:</label>
                 <select id="muscleGroup">
                     <option value="0">Elige una opción</option>
                     <option value="1">Pecho</option>
@@ -34,16 +49,17 @@
                     <option value="6">Piernas</option>
                 </select>
             </div>
-            <button id="confirmBtn">Confirmar</button>
+            <button id="confirmBtn">Confirmar Ejercicio</button>
+            <div id="exerciseList"></div>
         </div>
 
-        <div id="resultSection">
+        <!-- Sección de resultados -->
+        <div id="resultSection" style="display:none;">
+            <h3>Tu Rutina</h3>
             <p id="resultMessage"></p>
-            <h4>Si quieres recibir noticias oprime el siguiente boton</h4>
-            <button id="newsBtn">Recibir Noticias</button>
+            <button id="sendEmailBtn">Enviar Rutina por Email</button>
         </div>
     </div>
-
-    
 </body>
+
 </html>
